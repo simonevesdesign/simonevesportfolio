@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: simon_eves_portfolio
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URI: ${DATABASE_URI}
+        PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URI: ${DATABASE_URI:-postgresql://postgres:password@db:5432/simon_eves_portfolio}
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

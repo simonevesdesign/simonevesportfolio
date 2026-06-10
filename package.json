@@ -1,0 +1,50 @@
+{
+  "name": "simon-eves-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate:types": "payload generate:types",
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
+    "seed": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts tsx src/seed.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.43.0",
+    "@payloadcms/next": "^3.43.0",
+    "@payloadcms/richtext-lexical": "^3.43.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "lucide-react": "^0.513.0",
+    "next": "^15.3.3",
+    "next-themes": "^0.4.6",
+    "payload": "^3.43.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.34.2",
+    "tailwind-merge": "^3.3.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8",
+    "tailwindcss": "^4.1.8",
+    "tsx": "^4.22.4",
+    "typescript": "^5"
+  }
+}
