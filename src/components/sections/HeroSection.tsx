@@ -109,8 +109,7 @@ export function HeroSection() {
 
       <div className="hero-meta">
         <p className="hero-desc">
-          I build the whole thing — from database schema and API integrations through to UI,
-          brand identity and print collateral. Currently Developer &amp; Designer at Flomedia.
+          I&apos;ve been a designer for 18 years. A few years ago I started building the things I was designing. Now I do both, end to end, at Flomedia and on my own.
         </p>
         <div className="now-widget">
           <div className="now-head">
@@ -119,15 +118,15 @@ export function HeroSection() {
           </div>
           <div className="now-row">
             <span className="now-key">Building</span>
-            <span className="now-val">Quest Workforce v2 <span className="now-sub">— timesheets &amp; invoicing</span></span>
+            <span className="now-val">Quest Workforce v2 <span className="now-sub">, timesheets and invoicing</span></span>
           </div>
           <div className="now-row">
             <span className="now-key">At</span>
-            <span className="now-val">Flomedia <span className="now-sub">— Developer &amp; Designer</span></span>
+            <span className="now-val">Flomedia <span className="now-sub">, Developer and Designer</span></span>
           </div>
           <div className="now-row">
             <span className="now-key">Open to</span>
-            <span className="now-val">Select freelance <span className="now-sub">— from Q3 2026</span></span>
+            <span className="now-val">Select freelance <span className="now-sub">, from Q3 2026</span></span>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 const STACK = [
   'Next.js', 'React', 'TypeScript', 'Supabase', 'MongoDB', 'Prisma',
   'Tailwind', 'WordPress', 'Vercel', 'Coolify', 'Windsurf', 'Claude API',
-  'Figma', 'InDesign',
+  'Figma', 'Adobe CC', 'InDesign', 'Illustrator', 'Photoshop',
 ]
 
 export function AboutSection() {
@@ -24,14 +24,10 @@ export function AboutSection() {
         </div>
         <div className="about-body">
           <p>
-            I work across the full stack — from database architecture and API integrations through to UI design,
-            brand identity and print. Based in Southend-on-Sea, currently Developer &amp; Designer at Flomedia
-            and running my own projects on the side.
+            Started in graphic design, spent 18 years doing it properly. Print, brand identity, editorial. Then I started building the websites I was designing and realised I preferred having control of the whole thing. Now I work full-stack at Flomedia and take on my own projects in Southend.
           </p>
           <p>
-            I use AI as a genuine part of my workflow — not just a tool but a collaborator. Windsurf for coding,
-            Claude for planning and writing, Midjourney for visual ideation. The result is faster delivery without
-            compromising on quality or craft.
+            InDesign, Illustrator and Photoshop for anything going to print. Figma for digital. Next.js, React and TypeScript for the build. Windsurf and Claude have become part of how I work day to day.
           </p>
 
           <div className="stack-section">

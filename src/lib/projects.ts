@@ -31,7 +31,7 @@ export const projects: Project[] = [
     linkText: 'Case study',
     year: '2025',
     span: 8,
-    thumbLabel: 'Quest Workforce — dashboard',
+    thumbLabel: 'Quest Workforce dashboard',
   },
   {
     id: '02',
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     linkText: 'Case study',
     year: '2024',
     span: 6,
-    thumbLabel: 'Quest Meditech — marketplace',
+    thumbLabel: 'Quest Meditech marketplace',
   },
   {
     id: '04',
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     linkText: 'Visit site',
     year: '2024',
     span: 6,
-    thumbLabel: 'MULSH — storefront',
+    thumbLabel: 'MULSH storefront',
   },
   {
     id: '05',
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     linkText: 'Case study',
     year: '2025',
     span: 4,
-    thumbLabel: 'TheSwim — social feed',
+    thumbLabel: 'TheSwim social feed',
   },
   {
     id: '07',
@@ -120,14 +120,14 @@ export const projects: Project[] = [
     category: 'WordPress build',
     title: 'Cabletek',
     description:
-      'Cable and wiring solutions. WordPress base with custom login and booking systems bolted on — well beyond a standard theme deployment.',
+      'Cable and wiring solutions. WordPress base with custom login and booking systems bolted on. Well beyond a standard theme deployment.',
     tags: ['WordPress', 'Custom auth', 'Booking'],
     filterTags: ['wordpress', 'full-stack'],
     link: '#',
     linkText: 'Case study',
     year: '2024',
     span: 4,
-    thumbLabel: 'Cabletek — booking',
+    thumbLabel: 'Cabletek booking',
   },
   {
     id: '08',
@@ -136,14 +136,14 @@ export const projects: Project[] = [
     category: 'WordPress · Charity',
     title: 'Essex Sight',
     description:
-      'Visual impairment charity. Events calendar integration, built to pass UK sight accessibility standards — WCAG compliance as a core deliverable.',
+      'Visual impairment charity. Events calendar integration, built to pass UK sight accessibility standards. WCAG compliance as a core deliverable.',
     tags: ['WordPress', 'WCAG', 'Events'],
     filterTags: ['wordpress', 'design'],
     link: '#',
     linkText: 'Case study',
     year: '2024',
     span: 4,
-    thumbLabel: 'Essex Sight — WCAG',
+    thumbLabel: 'Essex Sight WCAG',
   },
   {
     id: '09',
@@ -198,10 +198,10 @@ export const projects: Project[] = [
     index: '12',
     type: 'Branding',
     category: 'Brand identity',
-    title: 'Gold on the Go — Mark',
+    title: 'Gold on the Go Mark',
     description:
-      'Signet ring-style logo designed for vectorisation — heraldic, minimal, hallmark aesthetic. AI-assisted ideation refined to a clean final mark.',
-    tags: ['Logo', 'Midjourney', 'Vector'],
+      'Signet ring-style logo designed for vectorisation. Heraldic, minimal, hallmark aesthetic. AI-assisted ideation refined to a clean final mark.',
+    tags: ['Logo', 'Illustrator', 'Vector'],
     filterTags: ['design'],
     link: '#',
     linkText: 'Case study',

@@ -28,11 +28,11 @@ const schibstedGrotesk = Schibsted_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'Simon Eves — Developer & Designer',
+  title: 'Simon Eves | Developer & Designer',
   description:
     'Full-stack developer and designer based in Southend-on-Sea, Essex. Building platforms, products and brands at Flomedia.',
   openGraph: {
-    title: 'Simon Eves — Developer & Designer',
+    title: 'Simon Eves | Developer & Designer',
     description:
       'Full-stack developer and designer based in Southend-on-Sea, Essex.',
     type: 'website',
