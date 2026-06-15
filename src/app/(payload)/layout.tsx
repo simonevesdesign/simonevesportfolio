@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { RootLayout as PayloadRootLayout, metadata as payloadMetadata } from '@payloadcms/next/layouts'
 import { handleServerFunctions } from '@payloadcms/next/layouts'
-import type { ServerFunctionClient, ServerFunctionClientArgs } from 'payload/dist/admin/functions'
+import type { ServerFunctionClient, ServerFunctionClientArgs } from 'payload'
 import { importMap } from './admin/importMap'
 
 export const metadata: Metadata = payloadMetadata
