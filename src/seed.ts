@@ -19,6 +19,8 @@ async function seed() {
       collection: 'projects',
       data: {
         title: p.title,
+        slug: p.slug,
+        hasDetail: p.hasDetail,
         index: p.index,
         type: p.type,
         category: p.category,

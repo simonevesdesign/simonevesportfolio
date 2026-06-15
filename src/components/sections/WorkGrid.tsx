@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import type { Project } from '@/lib/projects'
+import type { Project } from '@/payload-types'
 
 const FILTERS = [
   { label: 'All', value: 'all' },
@@ -60,14 +60,14 @@ function ProjectCard({ project }: { project: Project }) {
     }
   }, [])
 
-  const isWide = project.span === 8
-  const isMedium = project.span === 6
+  const isWide = project.span === '8'
+  const isMedium = project.span === '6'
 
   const footerLink = project.hasDetail ? (
-    <Link href={`/work/${project.slug}`} className="arrow-link detail-link">
+    <Link href={`/work/${project.slug ?? ''}`} className="arrow-link detail-link">
       {project.linkText} <ArrowIcon />
     </Link>
-  ) : project.link !== '#' ? (
+  ) : !!project.link && project.link !== '#' ? (
     <a href={project.link} target="_blank" rel="noopener noreferrer" className="arrow-link">
       {project.linkText} <ArrowIcon />
     </a>
@@ -95,7 +95,7 @@ function ProjectCard({ project }: { project: Project }) {
             <h3 className="card-title">{project.title}</h3>
             <p className="card-desc">{project.description}</p>
             <div className="card-tags">
-              {project.tags.map((tag) => (
+              {(project.tags ?? []).map(({ tag }) => (
                 <span key={tag} className="card-tag">{tag}</span>
               ))}
             </div>
@@ -118,7 +118,7 @@ function ProjectCard({ project }: { project: Project }) {
           <h3 className="card-title">{project.title}</h3>
           <p className="card-desc">{project.description}</p>
           <div className="card-tags">
-            {project.tags.map((tag) => (
+            {(project.tags ?? []).map(({ tag }) => (
               <span key={tag} className="card-tag">{tag}</span>
             ))}
           </div>
@@ -136,7 +136,7 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const visible = projects.filter(
-    (p) => activeFilter === 'all' || p.filterTags.includes(activeFilter),
+    (p) => activeFilter === 'all' || (p.filterTags ?? []).some((t) => t.tag === activeFilter),
   )
 
   useEffect(() => {
