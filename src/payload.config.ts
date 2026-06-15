@@ -5,6 +5,7 @@ import { buildConfig } from 'payload'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Projects } from './collections/Projects'
+import * as migration_20250615_initial from './migrations/20250615_000000_initial'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -47,8 +48,8 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
       ssl: process.env.DATABASE_URI?.includes('sslmode=') ? undefined : { rejectUnauthorized: false },
     },
-    push: process.env.PAYLOAD_DATABASE_PUSH === 'true',
     migrationDir: path.resolve(dirname, 'migrations'),
+    prodMigrations: [{ name: '20250615_000000_initial', ...migration_20250615_initial }],
   }),
   sharp,
 })
