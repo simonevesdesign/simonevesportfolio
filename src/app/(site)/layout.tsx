@@ -4,7 +4,7 @@ import { Geist, Geist_Mono, Schibsted_Grotesk } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { CursorFollower } from '@/components/CursorFollower'
 import { ScrollReveal } from '@/components/ScrollReveal'
-import './globals.css'
+import '../globals.css'
 
 const geist = Geist({
   subsets: ['latin'],
@@ -33,16 +33,19 @@ export const metadata: Metadata = {
     'Full-stack developer and designer based in Southend-on-Sea, Essex. Building platforms, products and brands at Flomedia.',
   openGraph: {
     title: 'Simon Eves | Developer & Designer',
-    description:
-      'Full-stack developer and designer based in Southend-on-Sea, Essex.',
+    description: 'Full-stack developer and designer based in Southend-on-Sea, Essex.',
     type: 'website',
   },
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.variable} ${geistMono.variable} ${schibstedGrotesk.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geist.variable} ${geistMono.variable} ${schibstedGrotesk.variable}`}
+    >
+      <body>
         <ThemeProvider>
           {children}
           <ScrollReveal />

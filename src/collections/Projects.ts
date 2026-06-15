@@ -16,6 +16,21 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: 'slug',
+      type: 'text',
+      admin: {
+        description: 'URL slug for detail page, e.g. "quest-workforce"',
+      },
+    },
+    {
+      name: 'hasDetail',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'Enable detail page link at /work/[slug]',
+      },
+    },
+    {
       name: 'index',
       type: 'text',
       required: true,

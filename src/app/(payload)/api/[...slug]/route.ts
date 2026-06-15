@@ -2,7 +2,7 @@ import type { NextRequest } from 'next/server'
 import { REST_DELETE, REST_GET, REST_PATCH, REST_POST, REST_PUT } from '@payloadcms/next/routes'
 import config from '@payload-config'
 
-type RouteContext = { params: Promise<{ payload: string[] }> }
+type RouteContext = { params: Promise<{ slug: string[] }> }
 type RouteHandler = (req: NextRequest, ctx: RouteContext) => Promise<Response>
 
 export const GET = REST_GET(config) as unknown as RouteHandler
