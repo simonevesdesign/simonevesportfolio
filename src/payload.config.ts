@@ -46,6 +46,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
     },
+    push: process.env.PAYLOAD_DATABASE_PUSH === 'true',
   }),
   sharp,
 })
