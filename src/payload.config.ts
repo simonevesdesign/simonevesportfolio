@@ -46,7 +46,7 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
-      ssl: process.env.DATABASE_URI?.includes('sslmode=') ? undefined : { rejectUnauthorized: false },
+      ssl: process.env.DATABASE_URI?.includes('localhost') || process.env.DATABASE_URI?.includes('127.0.0.1') ? false : process.env.DATABASE_URI?.includes('sslmode=') ? undefined : { rejectUnauthorized: false },
     },
     migrationDir: path.resolve(dirname, 'migrations'),
     prodMigrations: [{ name: '20250615_000000_initial', ...migration_20250615_initial }],
