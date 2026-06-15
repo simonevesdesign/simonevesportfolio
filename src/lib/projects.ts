@@ -2,6 +2,7 @@ export type ProjectSpan = 8 | 6 | 4
 
 export interface Project {
   id: string
+  slug: string
   index: string
   type: string
   category: string
@@ -14,11 +15,14 @@ export interface Project {
   year: string
   span: ProjectSpan
   thumbLabel: string
+  hasDetail: boolean
 }
 
 export const projects: Project[] = [
   {
     id: '01',
+    slug: 'quest-workforce',
+    hasDetail: true,
     index: '01 / Featured',
     type: 'SaaS Platform',
     category: 'Multi-tenant SaaS',
@@ -35,6 +39,8 @@ export const projects: Project[] = [
   },
   {
     id: '02',
+    slug: 'quest-power',
+    hasDetail: true,
     index: '02',
     type: 'IoT',
     category: 'IoT Dashboard',
@@ -51,6 +57,8 @@ export const projects: Project[] = [
   },
   {
     id: '03',
+    slug: 'quest-meditech',
+    hasDetail: true,
     index: '03',
     type: 'Marketplace',
     category: 'B2B Marketplace',
@@ -67,6 +75,8 @@ export const projects: Project[] = [
   },
   {
     id: '04',
+    slug: 'mulsh-paint-pigments',
+    hasDetail: true,
     index: '04',
     type: 'E-commerce',
     category: 'Own-brand commerce',
@@ -83,6 +93,8 @@ export const projects: Project[] = [
   },
   {
     id: '05',
+    slug: 'gold-on-the-go',
+    hasDetail: true,
     index: '05',
     type: 'Full-stack',
     category: 'Brand & build',
@@ -99,6 +111,8 @@ export const projects: Project[] = [
   },
   {
     id: '06',
+    slug: 'theswim-catchrank',
+    hasDetail: true,
     index: '06',
     type: 'Consumer App',
     category: 'Social fitness',
@@ -115,6 +129,8 @@ export const projects: Project[] = [
   },
   {
     id: '07',
+    slug: 'cabletek',
+    hasDetail: true,
     index: '07',
     type: 'WordPress',
     category: 'WordPress build',
@@ -131,6 +147,8 @@ export const projects: Project[] = [
   },
   {
     id: '08',
+    slug: 'essex-sight',
+    hasDetail: true,
     index: '08',
     type: 'Accessibility',
     category: 'WordPress · Charity',
@@ -147,6 +165,8 @@ export const projects: Project[] = [
   },
   {
     id: '09',
+    slug: 'vacancy-generator',
+    hasDetail: false,
     index: '09',
     type: 'Internal Tool',
     category: 'Internal tooling',
@@ -163,6 +183,8 @@ export const projects: Project[] = [
   },
   {
     id: '10',
+    slug: 'screen-print-calculator',
+    hasDetail: false,
     index: '10',
     type: 'Tool',
     category: 'Business tooling',
@@ -179,6 +201,8 @@ export const projects: Project[] = [
   },
   {
     id: '11',
+    slug: 'quest-medical-brochure',
+    hasDetail: false,
     index: '11',
     type: 'Print',
     category: 'Print & copy',
@@ -195,6 +219,8 @@ export const projects: Project[] = [
   },
   {
     id: '12',
+    slug: 'gold-on-the-go-mark',
+    hasDetail: false,
     index: '12',
     type: 'Branding',
     category: 'Brand identity',

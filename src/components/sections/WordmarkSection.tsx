@@ -20,7 +20,7 @@ export function WordmarkSection() {
     letters.forEach((ch, i) => {
       const span = document.createElement('span')
       span.className = 'wordmark-letter'
-      span.textContent = ch
+      span.textContent = ch === ' ' ? '\u00A0' : ch
       span.style.cssText = `display:inline-block;will-change:transform;transition:transform 0.9s cubic-bezier(.16,1,.3,1) ${i * 38}ms, color 0.25s`
       if (!reduceMotion) span.style.transform = 'translateY(115%)'
 
@@ -72,7 +72,7 @@ export function WordmarkSection() {
       style={{ overflow: 'hidden' }}
     >
       <div ref={textRef} className="wordmark-text">
-        Simon Eves
+        Simon Eves.
       </div>
     </div>
   )

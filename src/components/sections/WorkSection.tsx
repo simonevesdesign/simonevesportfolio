@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { projects } from '@/lib/projects'
 import type { Project } from '@/lib/projects'
 
@@ -63,10 +64,22 @@ function ProjectCard({ project }: { project: Project }) {
   const isWide = project.span === 8
   const isMedium = project.span === 6
 
+  const footerLink = project.hasDetail ? (
+    <Link href={`/work/${project.slug}`} className="arrow-link detail-link">
+      {project.linkText} <ArrowIcon />
+    </Link>
+  ) : project.link !== '#' ? (
+    <a href={project.link} target="_blank" rel="noopener noreferrer" className="arrow-link">
+      {project.linkText} <ArrowIcon />
+    </a>
+  ) : (
+    <span className="muted-link">{project.linkText}</span>
+  )
+
   return (
     <article
       ref={cardRef}
-      className={`card reveal${isWide ? ' card-wide' : isMedium ? ' card-medium' : ''}`}
+      className={`card reveal${isWide ? ' card-wide' : isMedium ? ' card-medium' : ''}${project.hasDetail ? ' has-detail' : ''}`}
       style={{ gridColumn: `span ${project.span}` }}
     >
       {isWide ? (
@@ -88,9 +101,7 @@ function ProjectCard({ project }: { project: Project }) {
               ))}
             </div>
             <div className="card-footer">
-              <a href={project.link} className="arrow-link">
-                {project.linkText} <ArrowIcon />
-              </a>
+              {footerLink}
               <span className="card-year">{project.year}</span>
             </div>
           </div>
@@ -113,9 +124,7 @@ function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
           <div className="card-footer">
-            <a href={project.link} className="arrow-link">
-              {project.linkText} <ArrowIcon />
-            </a>
+            {footerLink}
             <span className="card-year">{project.year}</span>
           </div>
         </>
