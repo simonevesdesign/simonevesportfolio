@@ -4,7 +4,9 @@ import type { MigrateUpArgs, MigrateDownArgs } from '@payloadcms/db-postgres'
 export async function up({ db }: MigrateUpArgs): Promise<void> {
   await db.execute(sql`
 
-    CREATE TYPE IF NOT EXISTS "public"."enum_projects_span" AS ENUM('8', '6', '4');
+    DO $$ BEGIN
+      CREATE TYPE "public"."enum_projects_span" AS ENUM('8', '6', '4');
+    EXCEPTION WHEN duplicate_object THEN null; END $$;
 
     CREATE TABLE IF NOT EXISTS "users" (
       "id" serial PRIMARY KEY NOT NULL,
