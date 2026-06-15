@@ -45,8 +45,10 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
+      ssl: process.env.DATABASE_URI?.includes('sslmode=') ? undefined : { rejectUnauthorized: false },
     },
     push: process.env.PAYLOAD_DATABASE_PUSH === 'true',
+    migrationDir: path.resolve(dirname, 'migrations'),
   }),
   sharp,
 })
